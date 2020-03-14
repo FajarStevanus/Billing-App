@@ -1,6 +1,11 @@
+int pin[] = {2, 3, 4, 5, 6, 7, 8, 9};
 String readString;
 
 void setup() {
+  for (int i=0; i<8; i++) {
+  pinMode(pin[i],OUTPUT);
+    }
+  
   Serial.begin(9600);
 }
 
@@ -14,14 +19,18 @@ void loop() {
   if (readString.length() >0) {
     String a = readString;
     int jml=a.length();
-    jbr=a.substring(0,1);
-    jbg=a.substring(1,2);
-    jbb=a.substring(2,3);
-    jsr=a.substring(3,4);
-    jsg=a.substring(4,5);
-    jsb=a.substring(5,6);
-    jkr=a.substring(6,7);
-    jkg=a.substring(7,8);    
+    for (int i=0; i<8; i++) {
+      //Data=a.substring(i,i+1);
+      char c=a[i];
+      if(a[i]=='1'){
+        digitalWrite(pin[i], HIGH);
+      }
+      else{
+        digitalWrite(pin[i], LOW);
+      }
+      
+    }
+   
     readString="";
   }
 }
