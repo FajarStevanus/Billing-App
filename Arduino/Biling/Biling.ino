@@ -20,7 +20,6 @@ void loop() {
     String a = readString;
     int jml=a.length();
     for (int i=0; i<8; i++) {
-      //Data=a.substring(i,i+1);
       char c=a[i];
       if(a[i]=='1'){
         digitalWrite(pin[i], HIGH);
