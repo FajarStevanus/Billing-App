@@ -1,2 +1,2 @@
 
-Copyright (C) 2020 fajar stevanus
+Copyright (C) 2020 Panjoel Tech
